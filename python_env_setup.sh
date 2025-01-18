@@ -70,11 +70,13 @@ git_ignore () {
 		if [[ -z $check ]]
 		then
 			echo "$1/" >> $ignore_path
+			echo "__pycache__/"  >> $ignore_path
 		fi
 	else
 
 		git --git-dir "$current_dir/.git" init
 		echo "$1/" >> $ignore_path
+		echo "__pycache__/"  >> $ignore_path
 	fi
 
 	echo "all set up"
